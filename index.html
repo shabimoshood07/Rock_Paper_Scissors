@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock_Paper_Scissors</title>
+  </head>
+  <body>
+    <div id="choices">
+      <input value="rock" class="btn" type="button" />
+      <input value="paper" class="btn" type="button" />
+      <input value="scissors" class="btn" type="button" />
+    </div>
+
+    <div>
+      <p>You <span class="my-choice"></span></p>
+      <p>computer <span class="compt-choice"></span></p>
+    </div>
+
+    <p>Wins <span class="Wins"></span></p>
+    <p>losses <span class="losses"></span></p>
+    <p>ties <span class="ties"></span></p>
+
+    <script>
+      const options = ["rock", "paper", "scissors"];
+      const choice = document.querySelector("#choices");
+      const btns = document.querySelectorAll(".btn");
+      let wins = 0;
+      let losses = 0;
+      let ties = 0;
+
+      btns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          let myChoice = e.target.value;
+          let comptChoice = options[Math.floor(Math.random() * 3)];
+          console.log(myChoice, comptChoice);
+        });
+      });
+
+      choice.addEventListener("click", () => {});
+    </script>
+  </body>
+</html>
